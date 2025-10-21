@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.5.6</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.nezhub</groupId>
+	<artifactId>nezhub</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>NezHub</name>
+	<description>API backend GraphQL para gestionar proyectos colaborativos tipo open-source</description>
+	<url/>
+	<licenses>
+		<license/>
+	</licenses>
+	<developers>
+		<developer/>
+	</developers>
+	<scm>
+		<connection/>
+		<developerConnection/>
+		<tag/>
+		<url/>
+	</scm>
+	<properties>
+		<java.version>17</java.version>
+        <jjwt.version>0.13.0</jjwt.version>
+	</properties>
+
+    <dependencies>
+        <!-- ========== SPRING BOOT CORE ========== -->
+
+        <!-- Spring Web: Proporciona capacidades REST y servidor embebido Tomcat -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- ========== GRAPHQL ========== -->
+
+        <!-- Spring GraphQL: Implementación oficial de GraphQL para Spring Boot
+             Permite crear APIs GraphQL con queries, mutations y subscriptions -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-graphql</artifactId>
+        </dependency>
+
+        <!-- ========== BASE DE DATOS ========== -->
+
+        <!-- Spring Data MongoDB: Integración con MongoDB (NoSQL)
+             Proporciona repositories, queries automáticas y mapeo objeto-documento -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+
+        <!-- ========== CACHÉ ========== -->
+
+        <!-- Spring Data Redis: Cliente para Redis (caché distribuido)
+             Usaremos Redis para cachear queries frecuentes y mejorar rendimiento -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
+        <!-- ========== SEGURIDAD ========== -->
+
+        <!-- Spring Security: Framework de autenticación y autorización
+             Protege endpoints, gestiona usuarios y maneja JWT -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <!-- JWT API: Interfaz para crear y validar tokens JWT -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+            <version>${jjwt.version}</version>
+        </dependency>
+
+        <!-- JWT Implementation: Implementación concreta de JJWT
+             Scope runtime: Solo necesaria en ejecución, no en compilación -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+            <version>${jjwt.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- JWT Jackson: Soporte para serialización JSON de tokens
+             Scope runtime: Solo necesaria en ejecución -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId>
+            <version>${jjwt.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- ========== VALIDACIÓN ========== -->
+
+        <!-- Bean Validation: Validaciones declarativas con anotaciones
+             Ejemplo: @NotNull, @Size, @Email para validar DTOs -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+
+        <!-- ========== TESTING ========== -->
+
+        <!-- Spring Boot Test: Framework de testing completo
+             Incluye JUnit 5, Mockito, AssertJ, etc.
+             Scope test: Solo para pruebas, no en producción -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Spring GraphQL Test: Utilidades para testing de GraphQL
+             Permite probar queries y mutations fácilmente -->
+        <dependency>
+            <groupId>org.springframework.graphql</groupId>
+            <artifactId>spring-graphql-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Spring Security Test: Utilidades para testing de seguridad
+             Simula usuarios autenticados en tests -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

@@ -1,0 +1,75 @@
+# ==============================
+# Spring Boot / Java / Maven
+# ==============================
+/target/
+/out/
+/logs/
+/*.log
+/*.tmp
+/*.bak
+/*.swp
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven wrapper
+.mvn/wrapper/maven-wrapper.jar
+
+# Spring Boot specific
+spring.log
+spring-boot-devtools.properties
+
+# ==============================
+# STS (Spring Tool Suite)
+# ==============================
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# ==============================
+# IntelliJ IDEA
+# ==============================
+.idea/
+*.iws
+*.iml
+*.ipr
+/out/
+
+# ==============================
+# NetBeans
+# ==============================
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# ==============================
+# VS Code
+# ==============================
+.vscode/
+
+# ==============================
+# Redis / MongoDB / DB
+# ==============================
+*.rdb
+*.aof
+*.dump
+*.lock
+*.lock.db
+*.lock.mongo
+*.log
+
+# ==============================
+# OS Generated Files
+# ==============================
+.DS_Store
+Thumbs.db
