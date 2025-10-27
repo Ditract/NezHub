@@ -1,0 +1,89 @@
+# ========================================
+# CONFIGURACIÓN PRINCIPAL DE NEZHUB
+# ========================================
+
+# ========== CONFIGURACIÓN DEL SERVIDOR ==========
+server:
+
+  port: 8080
+
+  error:
+    include-message: always
+    include-binding-errors: always
+
+# ========== CONFIGURACIÓN DE SPRING ==========
+spring:
+
+  application:
+    name: nezhub
+  
+  # ========== MONGODB ==========
+  data:
+    mongodb:
+
+      uri: mongodb://localhost:27017/nezhub
+
+      database: nezhub
+
+      auto-index-creation: true
+
+    # ========== REDIS ==========
+    redis:
+      # Configuración para Redis local
+      host: localhost
+      port: 6379
+      # Timeout de conexión (60 segundos)
+      timeout: 60000
+      # Configuración del pool de conexiones
+      lettuce:
+        pool:
+          max-active: 8    # Máximo de conexiones activas
+          max-idle: 8      # Máximo de conexiones inactivas
+          min-idle: 0      # Mínimo de conexiones inactivas
+  
+  # ========== CACHÉ ==========
+  cache:
+
+    type: redis
+    redis:
+      # TTL por defecto: 1 hora (3600000 ms)
+      time-to-live: 3600000
+      # Cachear valores null para evitar consultas repetidas
+      cache-null-values: false
+  
+  # ========== GRAPHQL ==========
+  graphql:
+    # Accesible en: http://localhost:8080/graphiql
+    graphiql:
+      enabled: true
+    schema:
+      locations: classpath:graphql/
+      file-extensions: .graphqls
+    # Configuración de CORS para GraphQL
+    cors:
+      allowed-origins: "*"
+      allowed-methods: "*"
+      allowed-headers: "*"
+
+# ========== SEGURIDAD JWT ==========
+# Configuración personalizada para JSON Web Tokens
+jwt:
+
+  secret: nezhub-super-secret-key-change-in-production-2024
+  # Tiempo de expiración del token: 24 horas en milisegundos
+  expiration: 86400000
+
+# ========== LOGGING ==========
+logging:
+  level:
+
+    com.nezhub.app: DEBUG
+
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+
+    org.springframework.security: DEBUG
+
+    org.springframework.graphql: DEBUG
+
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
