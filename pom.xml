@@ -32,9 +32,7 @@
 	</properties>
 
     <dependencies>
-        <!-- ========== SPRING BOOT CORE ========== -->
 
-        <!-- Spring Web: Proporciona capacidades REST y servidor embebido Tomcat -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -69,8 +67,7 @@
 
         <!-- ========== SEGURIDAD ========== -->
 
-        <!-- Spring Security: Framework de autenticación y autorización
-             Protege endpoints, gestiona usuarios y maneja JWT -->
+        <!-- Spring Security-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
@@ -83,8 +80,7 @@
             <version>${jjwt.version}</version>
         </dependency>
 
-        <!-- JWT Implementation: Implementación concreta de JJWT
-             Scope runtime: Solo necesaria en ejecución, no en compilación -->
+        <!-- JWT Implementation: Implementación concreta de JJWT-->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-impl</artifactId>
@@ -92,8 +88,7 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- JWT Jackson: Soporte para serialización JSON de tokens
-             Scope runtime: Solo necesaria en ejecución -->
+        <!-- JWT Jackson: Soporte para serialización -->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-jackson</artifactId>
@@ -103,8 +98,7 @@
 
         <!-- ========== VALIDACIÓN ========== -->
 
-        <!-- Bean Validation: Validaciones declarativas con anotaciones
-             Ejemplo: @NotNull, @Size, @Email para validar DTOs -->
+        <!-- Validation -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
@@ -113,25 +107,21 @@
 
         <!-- ========== TESTING ========== -->
 
-        <!-- Spring Boot Test: Framework de testing completo
-             Incluye JUnit 5, Mockito, AssertJ, etc.
-             Scope test: Solo para pruebas, no en producción -->
+        <!-- Spring Boot Test: Framework de testing completo-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
 
-        <!-- Spring GraphQL Test: Utilidades para testing de GraphQL
-             Permite probar queries y mutations fácilmente -->
+        <!-- Spring GraphQL Test: Utilidades para testing de GraphQL-->
         <dependency>
             <groupId>org.springframework.graphql</groupId>
             <artifactId>spring-graphql-test</artifactId>
             <scope>test</scope>
         </dependency>
 
-        <!-- Spring Security Test: Utilidades para testing de seguridad
-             Simula usuarios autenticados en tests -->
+        <!-- Spring Security Test-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
