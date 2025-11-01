@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: nezhub
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - nezhub-net
+
+  redis:
+    image: redis:alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis_data:/data
+    networks:
+      - nezhub-net
+
+volumes:
+  mongo_data:
+  redis_data:
+
+networks:
+  nezhub-net:
+    driver: bridge
