@@ -1,0 +1,53 @@
+# Definición de tipos, queries y mutations
+
+# ============================================
+# TIPOS DE USUARIO
+# ============================================
+type User {
+    id: ID!
+    username: String!
+    email: String!
+    role: UserRole!
+    createdAt: String!
+}
+
+enum UserRole {
+    CREATOR
+    COLLABORATOR
+}
+
+# ============================================
+# AUTENTICACIÓN
+# ============================================
+
+type AuthResponse {
+    token: String!
+    username: String!
+    role: UserRole!
+}
+
+# ============================================
+# MUTATIONS (Operaciones de escritura)
+# ============================================
+
+type Mutation {
+    register(
+        username: String!
+        email: String!
+        password: String!
+        role: UserRole!
+    ): AuthResponse!
+
+    login(
+        email: String!
+        password: String!
+    ): AuthResponse!
+}
+
+# ============================================
+# QUERIES (Operaciones de lectura)
+# ============================================
+
+type Query {
+    _dummy: String
+}
