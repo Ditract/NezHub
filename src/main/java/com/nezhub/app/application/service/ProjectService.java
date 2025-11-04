@@ -13,7 +13,16 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
+/**
+ * Servicio para operaciones CRUD de proyectos.
+ *
+ * RESPONSABILIDADES:
+ * - Crear, actualizar, eliminar proyectos
+ * - Validar permisos (solo creador puede modificar)
+ * - Gestionar caché con Redis
+ */
 @Service
 public class ProjectService {
 
@@ -23,30 +32,42 @@ public class ProjectService {
         this.projectRepository = projectRepository;
     }
 
+
+    @CacheEvict(value = "trendingProjects", allEntries = true)
     public Project createProject(CreateProjectRequest request, String userId) {
-        Project project = new Project();
-        project.setTitle(request.getTitle());
-        project.setDescription(request.getDescription());
-        project.setGoals(request.getGoals() != null ? request.getGoals() : new ArrayList<>());
-        project.setRequiredSkills(request.getRequiredSkills());
-        project.setStatus(ProjectStatus.OPEN);
-        project.setCreatorId(userId);
-        project.setCollaborators(new ArrayList<>());
-        project.setVotes(0);
-        project.setCreatedAt(LocalDateTime.now());
-        project.setUpdatedAt(LocalDateTime.now());
+        LocalDateTime now = LocalDateTime.now();
+
+        Project project = new Project(
+                null, //
+                request.getTitle(),
+                request.getDescription(),
+                request.getGoals() != null ? request.getGoals() : new ArrayList<>(),
+                request.getRequiredSkills(),
+                ProjectStatus.OPEN,
+                userId,
+                new ArrayList<>(), // colaboradores vacíos
+                0, // votos iniciales
+                now, // createdAt
+                now  // updatedAt
+        );
+
         return projectRepository.save(project);
     }
 
+
+
     @CacheEvict(value = {"projectDetails", "trendingProjects"}, allEntries = true)
     public Project updateProject(String projectId, UpdateProjectRequest request, String userId) {
+
         Project project = projectRepository.findById(projectId)
                 .orElseThrow(() -> new ProjectNotFoundException("Proyecto no encontrado con ID: " + projectId));
+
 
         if (!project.getCreatorId().equals(userId)) {
             throw new UnauthorizedOperationException("Solo el creador puede actualizar este proyecto");
         }
 
+        // Actualizar campos (solo si no son null)
         if (request.getTitle() != null) {
             project.setTitle(request.getTitle());
         }
@@ -64,8 +85,10 @@ public class ProjectService {
         }
 
         project.setUpdatedAt(LocalDateTime.now());
+
         return projectRepository.save(project);
     }
+
 
     @CacheEvict(value = {"projectDetails", "trendingProjects"}, allEntries = true)
     public void deleteProject(String projectId, String userId) {
@@ -79,9 +102,32 @@ public class ProjectService {
         projectRepository.delete(project);
     }
 
+
     @Cacheable(value = "projectDetails", key = "#projectId")
     public Project getProjectById(String projectId) {
         return projectRepository.findById(projectId)
                 .orElseThrow(() -> new ProjectNotFoundException("Proyecto no encontrado con ID: " + projectId));
     }
+
+
+    @Cacheable(value = "trendingProjects", key = "'trending_' + #limit")
+    public List<Project> getTrendingProjects(int limit) {
+        return projectRepository.findByStatusOrderByVotesDesc(
+                ProjectStatus.OPEN,
+                org.springframework.data.domain.PageRequest.of(0, limit)
+        ).getContent();
+    }
+
+
+    @Cacheable(value = "searchBySkill", key = "#skill")
+    public List<Project> searchBySkill(String skill) {
+        return projectRepository.findByRequiredSkillsContaining(skill);
+    }
+
+
+    @CacheEvict(value = "trendingProjects", allEntries = true)
+    public void invalidateTrendingCache() {
+        // Método vacío - solo invalida el caché
+    }
 }
+
