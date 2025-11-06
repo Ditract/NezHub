@@ -3,6 +3,7 @@
 # ============================================
 # TIPOS DE USUARIO
 # ============================================
+
 type User {
     id: ID!
     username: String!
@@ -17,6 +18,31 @@ enum UserRole {
 }
 
 # ============================================
+# TIPOS DE PROYECTO
+# ============================================
+
+type Project {
+    id: ID!
+    title: String!
+    description: String!
+    goals: [String!]!
+    requiredSkills: [String!]!
+    status: ProjectStatus!
+    creatorId: ID!
+    creatorUsername: String!
+    collaborators: [ID!]!
+    votes: Int!
+    createdAt: String!
+    updatedAt: String!
+}
+
+enum ProjectStatus {
+    OPEN
+    IN_PROGRESS
+    CLOSED
+}
+
+# ============================================
 # AUTENTICACIÓN
 # ============================================
 
@@ -27,7 +53,7 @@ type AuthResponse {
 }
 
 # ============================================
-# MUTATIONS (Operaciones de escritura)
+# MUTATIONS
 # ============================================
 
 type Mutation {
@@ -45,9 +71,13 @@ type Mutation {
 }
 
 # ============================================
-# QUERIES (Operaciones de lectura)
+# QUERIES
 # ============================================
 
 type Query {
-    _dummy: String
+    getProject(id: ID!): Project
+
+    getAllProjects: [Project!]!
+
+    getTrendingProjects(limit: Int): [Project!]!
 }
