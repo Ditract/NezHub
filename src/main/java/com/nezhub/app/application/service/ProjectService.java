@@ -15,14 +15,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Servicio para operaciones CRUD de proyectos.
- *
- * RESPONSABILIDADES:
- * - Crear, actualizar, eliminar proyectos
- * - Validar permisos (solo creador puede modificar)
- * - Gestionar caché con Redis
- */
+
 @Service
 public class ProjectService {
 
@@ -129,5 +122,14 @@ public class ProjectService {
     public void invalidateTrendingCache() {
         // Método vacío - solo invalida el caché
     }
+
+    /**
+     * Obtiene todos los proyectos.
+     * Sin caché porque puede retornar muchos registros.
+     */
+    public List<Project> findAll() {
+        return projectRepository.findAll();
+    }
+
 }
 
