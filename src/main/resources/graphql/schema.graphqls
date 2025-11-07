@@ -53,10 +53,27 @@ type AuthResponse {
 }
 
 # ============================================
-# MUTATIONS
+# MUTATIONS (Operaciones de escritura)
 # ============================================
 
+
+input CreateProjectInput {
+    title: String!
+    description: String!
+    goals: [String!]
+    requiredSkills: [String!]!
+}
+
+input UpdateProjectInput {
+    title: String
+    description: String
+    goals: [String!]
+    requiredSkills: [String!]
+    status: ProjectStatus
+}
+
 type Mutation {
+
     register(
         username: String!
         email: String!
@@ -68,16 +85,24 @@ type Mutation {
         email: String!
         password: String!
     ): AuthResponse!
+
+    # Proyectos (requieren autenticación JWT)
+    createProject(input: CreateProjectInput!): Project!
+    updateProject(id: ID!, input: UpdateProjectInput!): Project!
+    deleteProject(id: ID!): Boolean!
 }
 
 # ============================================
-# QUERIES
+# QUERIES (Operaciones de lectura)
 # ============================================
 
 type Query {
+    # Obtener proyecto por ID
     getProject(id: ID!): Project
 
+    # Obtener todos los proyectos
     getAllProjects: [Project!]!
 
+    # Obtener proyectos trending (más votados)
     getTrendingProjects(limit: Int): [Project!]!
 }
