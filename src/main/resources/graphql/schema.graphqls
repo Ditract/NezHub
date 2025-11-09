@@ -1,8 +1,8 @@
-# Definición de tipos, queries y mutations
 
 # ============================================
 # TIPOS DE USUARIO
 # ============================================
+
 type User {
     id: ID!
     username: String!
@@ -14,6 +14,31 @@ type User {
 enum UserRole {
     CREATOR
     COLLABORATOR
+}
+
+# ============================================
+# TIPOS DE PROYECTO
+# ============================================
+
+type Project {
+    id: ID!
+    title: String!
+    description: String!
+    goals: [String!]!
+    requiredSkills: [String!]!
+    status: ProjectStatus!
+    creatorId: ID!
+    creatorUsername: String!
+    collaborators: [ID!]!
+    votes: Int!
+    createdAt: String!
+    updatedAt: String!
+}
+
+enum ProjectStatus {
+    OPEN
+    IN_PROGRESS
+    CLOSED
 }
 
 # ============================================
@@ -30,7 +55,24 @@ type AuthResponse {
 # MUTATIONS (Operaciones de escritura)
 # ============================================
 
+
+input CreateProjectInput {
+    title: String!
+    description: String!
+    goals: [String!]
+    requiredSkills: [String!]!
+}
+
+input UpdateProjectInput {
+    title: String
+    description: String
+    goals: [String!]
+    requiredSkills: [String!]
+    status: ProjectStatus
+}
+
 type Mutation {
+
     register(
         username: String!
         email: String!
@@ -42,6 +84,11 @@ type Mutation {
         email: String!
         password: String!
     ): AuthResponse!
+
+    # Proyectos (requieren autenticación JWT)
+    createProject(input: CreateProjectInput!): Project!
+    updateProject(id: ID!, input: UpdateProjectInput!): Project!
+    deleteProject(id: ID!): Boolean!
 }
 
 # ============================================
@@ -49,5 +96,17 @@ type Mutation {
 # ============================================
 
 type Query {
-    _dummy: String
+
+    getProject(id: ID!): Project
+
+    getAllProjects(page: Int, size: Int): [Project!]!
+
+    # Obtener proyectos trending (más votados)
+    getTrendingProjects(limit: Int): [Project!]!
+
+    searchProjects(
+        skill: String
+        status: ProjectStatus
+        creatorId: ID
+    ): [Project!]!
 }

@@ -45,6 +45,36 @@ public class GlobalExceptionHandler extends DataFetcherExceptionResolverAdapter 
                     .build();
         }
 
+        // Proyecto no encontrado
+        if (ex instanceof ProjectNotFoundException) {
+            return GraphqlErrorBuilder.newError()
+                    .errorType(ErrorType.NOT_FOUND)
+                    .message(ex.getMessage())
+                    .path(env.getExecutionStepInfo().getPath())
+                    .location(env.getField().getSourceLocation())
+                    .build();
+        }
+
+        // Operación no autorizada
+        if (ex instanceof UnauthorizedOperationException) {
+            return GraphqlErrorBuilder.newError()
+                    .errorType(ErrorType.UNAUTHORIZED)
+                    .message(ex.getMessage())
+                    .path(env.getExecutionStepInfo().getPath())
+                    .location(env.getField().getSourceLocation())
+                    .build();
+        }
+
+        // Datos inválidos de proyecto
+        if (ex instanceof InvalidProjectDataException) {
+            return GraphqlErrorBuilder.newError()
+                    .errorType(ErrorType.BAD_REQUEST)
+                    .message(ex.getMessage())
+                    .path(env.getExecutionStepInfo().getPath())
+                    .location(env.getField().getSourceLocation())
+                    .build();
+        }
+
         // Errores de validación (Bean Validation)
         if (ex instanceof BindException) {
             BindException bindException = (BindException) ex;
@@ -61,7 +91,7 @@ public class GlobalExceptionHandler extends DataFetcherExceptionResolverAdapter 
                     .build();
         }
 
-
+        // Error genérico
         return GraphqlErrorBuilder.newError()
                 .errorType(ErrorType.INTERNAL_ERROR)
                 .message("Error interno del servidor")
@@ -70,3 +100,4 @@ public class GlobalExceptionHandler extends DataFetcherExceptionResolverAdapter 
                 .build();
     }
 }
+
