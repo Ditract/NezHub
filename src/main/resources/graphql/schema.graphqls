@@ -1,4 +1,3 @@
-# Definición de tipos, queries y mutations
 
 # ============================================
 # TIPOS DE USUARIO
@@ -97,12 +96,17 @@ type Mutation {
 # ============================================
 
 type Query {
-    # Obtener proyecto por ID
+
     getProject(id: ID!): Project
 
-    # Obtener todos los proyectos
     getAllProjects: [Project!]!
 
     # Obtener proyectos trending (más votados)
     getTrendingProjects(limit: Int): [Project!]!
+
+    searchProjects(
+        skill: String
+        status: ProjectStatus
+        creatorId: ID
+    ): [Project!]!
 }
