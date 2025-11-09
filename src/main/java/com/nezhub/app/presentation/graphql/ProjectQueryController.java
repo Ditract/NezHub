@@ -30,9 +30,17 @@ public class ProjectQueryController {
     }
 
 
+    //Obtener todos los proyectos con paginación
     @QueryMapping
-    public List<Project> getAllProjects() {
-        return projectService.findAll();
+    public List<Project> getAllProjects(
+            @Argument(name = "page") Integer page,
+            @Argument(name = "size") Integer size
+    ) {
+        // Valores por defecto
+        int pageNumber = (page != null && page >= 0) ? page : 0;
+        int pageSize = (size != null && size > 0 && size <= 100) ? size : 20;
+
+        return projectService.findAllPaginated(pageNumber, pageSize);
     }
 
     /**

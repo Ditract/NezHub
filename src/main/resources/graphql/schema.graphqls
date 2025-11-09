@@ -99,7 +99,7 @@ type Query {
 
     getProject(id: ID!): Project
 
-    getAllProjects: [Project!]!
+    getAllProjects(page: Int, size: Int): [Project!]!
 
     # Obtener proyectos trending (más votados)
     getTrendingProjects(limit: Int): [Project!]!

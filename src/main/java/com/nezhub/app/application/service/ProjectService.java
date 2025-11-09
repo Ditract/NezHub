@@ -131,5 +131,12 @@ public class ProjectService {
         return projectRepository.findAll();
     }
 
+    //Obtiene proyecto con paginación
+    public List<Project> findAllPaginated(int page, int size) {
+        org.springframework.data.domain.Pageable pageable =
+                org.springframework.data.domain.PageRequest.of(page, size);
+        return projectRepository.findAll(pageable).getContent();
+    }
+
 }
 
