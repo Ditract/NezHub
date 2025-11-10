@@ -38,6 +38,17 @@ public class Collaboration {
         this.requestedAt = requestedAt;
         this.respondedAt = respondedAt;
     }
+    public Collaboration(String projectId,
+                         String userId, CollaborationStatus status,
+                         LocalDateTime requestedAt, LocalDateTime respondedAt
+    ) {
+        this.projectId = projectId;
+        this.userId = userId;
+        this.status = status;
+        this.requestedAt = requestedAt;
+        this.respondedAt = respondedAt;
+    }
+
 
     public String getId() {
         return id;
