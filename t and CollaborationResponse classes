@@ -1,0 +1,17 @@
+[33m7530b2c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature/collaboration-services[m[33m, [m[1;31morigin/feature/collaboration-services[m[33m)[m feat(service): implement CollaborationService with join, approve, reject, and query logic
+[33mf6261c7[m refactor(handler): extend GlobalExceptionHandler to support collaboration exceptions
+[33m632d1c4[m feat(exception): add collaboration-related exceptions
+[33mff25c8b[m feat(dto): add JoinProjectRequest and CollaborationResponse classes
+[33m6291f3f[m[33m ([m[1;31morigin/dev[m[33m, [m[1;32mdev[m[33m)[m perf(app): optimize MongoDB indexes, Redis caching, and pagination
+[33m9d8bcf6[m feat(graphql): implement advanced project search with flexible filters (#9)
+[33m962b7bb[m feat(graphql): secured project mutations (#8)
+[33m54278a1[m feat(graphql): implement project queries and schema extensions (#7)
+[33m45fbc42[m feat(project): implement caching for trending and skill-based queries
+[33m85608b4[m feat(project): implement ProjectService and base CRUD logic (#6)
+[33mc8864af[m feat(graphql): add AuthController and authentication schema
+[33m96366d2[m feat(auth): Implement AuthService, UserService (register/login), DTOs & global exceptions (#4)
+[33m472cc41[m feat(security): Implement JWT Authentication with MongoDB UserDetails (#2)
+[33ma909003[m feat(config): configure Redis cache manager and template with JSON serialization and custom TTLs
+[33mf8f552e[m feat: base domain models and MongoDB repositories (#1)
+[33m2f22986[m feat(config): add YAML configuration file and docker-compose setup for MongoDB and Redis
+[33m3495f86[m Initial commit: setup project structure
