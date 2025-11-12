@@ -25,6 +25,7 @@ public class Collaboration {
     private LocalDateTime respondedAt;
 
 
+    /* TODO: Cambiar al patrón builder */
     public Collaboration(){}
 
     public Collaboration(String id, String projectId,

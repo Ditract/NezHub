@@ -52,6 +52,26 @@ type AuthResponse {
 }
 
 # ============================================
+# TIPOS DE COLABORACIÓN
+# ============================================
+
+type Collaboration {
+    id: ID!
+    projectId: ID!
+    userId: ID!
+    username: String!
+    status: CollaborationStatus!
+    requestedAt: String!
+    respondedAt: String
+}
+
+enum CollaborationStatus {
+    PENDING
+    APPROVED
+    REJECTED
+}
+
+# ============================================
 # MUTATIONS (Operaciones de escritura)
 # ============================================
 
@@ -89,6 +109,15 @@ type Mutation {
     createProject(input: CreateProjectInput!): Project!
     updateProject(id: ID!, input: UpdateProjectInput!): Project!
     deleteProject(id: ID!): Boolean!
+
+    # Colaboración (requieren autenticación JWT)
+    joinProject(projectId: ID!): Collaboration!
+    approveCollaboration(collaborationId: ID!): Collaboration!
+    rejectCollaboration(collaborationId: ID!): Collaboration!
+
+    # Votos (requieren autenticación JWT)
+    voteProject(projectId: ID!): Project!
+    unvoteProject(projectId: ID!): Project!
 }
 
 # ============================================
@@ -109,4 +138,10 @@ type Query {
         status: ProjectStatus
         creatorId: ID
     ): [Project!]!
+
+    # Colaboraciones de un proyecto
+    getProjectCollaborations(projectId: ID!, status: CollaborationStatus): [Collaboration!]!
+
+    # Verificar si usuario votó un proyecto
+    hasVoted(projectId: ID!): Boolean!
 }
