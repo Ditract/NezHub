@@ -105,6 +105,7 @@ public class JwtUtil {
 
     /**
      * Obtiene la clave de firma desde la configuración.
+     * TODO: Cambiar para usar una clave en Base64 (decodificar con Decoders.BASE64.decode(secret))
      */
     private SecretKey getSigningKey() {
         byte[] keyBytes = secret.getBytes();

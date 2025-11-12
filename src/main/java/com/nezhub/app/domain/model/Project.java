@@ -43,7 +43,7 @@ public class Project {
 
     private LocalDateTime updatedAt;
 
-
+    /* TODO: Cambiar al patrón builder */
     public Project(){}
 
     public Project(String id, String title, String description, List<String> goals,
