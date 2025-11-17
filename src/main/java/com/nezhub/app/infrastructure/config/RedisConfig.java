@@ -62,6 +62,14 @@ public class RedisConfig {
                 defaultConfig.entryTtl(Duration.ofHours(1))
         );
 
+        cacheConfigurations.put(CacheNames.SKILL_STATS,
+                defaultConfig.entryTtl(Duration.ofHours(2))
+        );
+
+        cacheConfigurations.put(CacheNames.STATUS_STATS,
+                defaultConfig.entryTtl(Duration.ofHours(2))
+        );
+
         return RedisCacheManager.builder(connectionFactory)
                 .cacheDefaults(defaultConfig)
                 .withInitialCacheConfigurations(cacheConfigurations)
@@ -72,5 +80,7 @@ public class RedisConfig {
         public static final String TRENDING_PROJECTS = "trendingProjects";
         public static final String SEARCH_BY_SKILL = "searchBySkill";
         public static final String PROJECT_DETAILS = "projectDetails";
+        public static final String SKILL_STATS = "skillStats";
+        public static final String STATUS_STATS = "statusStats";
     }
 }
