@@ -1,4 +1,3 @@
-
 # ============================================
 # TIPOS DE USUARIO
 # ============================================
@@ -69,6 +68,20 @@ enum CollaborationStatus {
     PENDING
     APPROVED
     REJECTED
+}
+
+# ============================================
+# TIPOS DE ESTADÍSTICAS
+# ============================================
+
+type SkillStats {
+    skill: String!
+    count: Int!
+}
+
+type StatusStats {
+    status: ProjectStatus!
+    count: Int!
 }
 
 # ============================================
@@ -144,4 +157,8 @@ type Query {
 
     # Verificar si usuario votó un proyecto
     hasVoted(projectId: ID!): Boolean!
+
+    # Estadísticas
+    getMostPopularSkills(limit: Int): [SkillStats!]!
+    getProjectStatsByStatus: [StatusStats!]!
 }
