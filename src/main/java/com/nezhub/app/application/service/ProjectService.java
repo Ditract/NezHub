@@ -95,7 +95,7 @@ public class ProjectService {
         projectRepository.delete(project);
     }
 
-
+    // TODO: Corregir error en caché (de momento funciona si quitamos caché)
     @Cacheable(value = "projectDetails", key = "#projectId")
     public Project getProjectById(String projectId) {
         return projectRepository.findById(projectId)

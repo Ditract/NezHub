@@ -1,55 +1,32 @@
-package com.nezhub.app.domain.model;
+package com.nezhub.app.application.dto.response;
 
 import com.nezhub.app.domain.enums.CollaborationStatus;
-import org.springframework.data.mongodb.core.index.CompoundIndex;
-import org.springframework.data.mongodb.core.index.CompoundIndexes;
-import org.springframework.data.mongodb.core.mapping.Document;
-
 import java.time.LocalDateTime;
 
-@Document(collection = "colaborations")
-@CompoundIndexes({
-        @CompoundIndex(name = "project_status_idx", def = "{'projectId': 1, 'status': 1}"),
-        @CompoundIndex(name = "user_project_unique_idx", def = "{'userId': 1, 'projectId': 1}", unique = true),
-        @CompoundIndex(name = "project_user_status_idx", def = "{'projectId': 1, 'userId': 1, 'status': 1}")
-})
-public class Collaboration {
+
+public class CollaborationResponse {
 
     private String id;
     private String projectId;
     private String userId;
-    private CollaborationStatus status = CollaborationStatus.PENDING;
-
+    private String username;  // Resuelto con @SchemaMapping
+    private CollaborationStatus status;
     private LocalDateTime requestedAt;
-
     private LocalDateTime respondedAt;
 
+    public CollaborationResponse() {
+    }
 
-    /* TODO: Cambiar al patrón builder */
-    public Collaboration(){}
-
-    public Collaboration(String id, String projectId,
-                         String userId, CollaborationStatus status,
-                         LocalDateTime requestedAt, LocalDateTime respondedAt
-    ) {
+    public CollaborationResponse(String id, String projectId, String userId, String username,
+                                 CollaborationStatus status, LocalDateTime requestedAt, LocalDateTime respondedAt) {
         this.id = id;
         this.projectId = projectId;
         this.userId = userId;
+        this.username = username;
         this.status = status;
         this.requestedAt = requestedAt;
         this.respondedAt = respondedAt;
     }
-    public Collaboration(String projectId,
-                         String userId, CollaborationStatus status,
-                         LocalDateTime requestedAt, LocalDateTime respondedAt
-    ) {
-        this.projectId = projectId;
-        this.userId = userId;
-        this.status = status;
-        this.requestedAt = requestedAt;
-        this.respondedAt = respondedAt;
-    }
-
 
     public String getId() {
         return id;
@@ -75,6 +52,14 @@ public class Collaboration {
         this.userId = userId;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public CollaborationStatus getStatus() {
         return status;
     }
@@ -98,4 +83,5 @@ public class Collaboration {
     public void setRespondedAt(LocalDateTime respondedAt) {
         this.respondedAt = respondedAt;
     }
+
 }
