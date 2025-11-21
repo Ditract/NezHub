@@ -32,6 +32,11 @@ public class UpdateProjectRequest {
         this.status = status;
     }
 
+    public UpdateProjectRequest(String title, ProjectStatus status) {
+        this.title = title;
+        this.status = status;
+    }
+
     public String getTitle() {
         return title;
     }
