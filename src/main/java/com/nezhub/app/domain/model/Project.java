@@ -46,10 +46,18 @@ public class Project {
     /* TODO: Cambiar al patrón builder */
     public Project(){}
 
-    public Project(String id, String title, String description, List<String> goals,
-                   List<String> requiredSkills, ProjectStatus status, String creatorId,
-                   List<String> collaborators, Integer votes, LocalDateTime createdAt,
-                   LocalDateTime updatedAt
+    public Project(
+            String id,
+            String title,
+            String description,
+            List<String> goals,
+            List<String> requiredSkills,
+            ProjectStatus status,
+            String creatorId,
+            List<String> collaborators,
+            Integer votes,
+            LocalDateTime createdAt,
+            LocalDateTime updatedAt
     ) {
         this.id = id;
         this.title = title;
@@ -63,6 +71,29 @@ public class Project {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
+
+    public Project(
+            String id,
+            String title,
+            String description,
+            ProjectStatus status,
+            String creatorId,
+            List<String> collaborators,
+            Integer votes,
+            LocalDateTime createdAt,
+            LocalDateTime updatedAt
+    ) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.status = status;
+        this.creatorId = creatorId;
+        this.collaborators = collaborators;
+        this.votes = votes;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
+
 
     public String getId() {
         return id;
