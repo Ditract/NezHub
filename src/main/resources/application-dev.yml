@@ -1,0 +1,49 @@
+# ========================================
+# PERFIL DE DESARROLLO (dev) - CONFIGURACIÓN LOCAL
+# ========================================
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+  # ========== MONGODB ==========
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/nezhub
+      database: nezhub
+      auto-index-creation: true
+
+    # ========== REDIS ==========
+    redis:
+      # Configuración para Redis local
+      host: localhost
+      port: 6379
+      # Timeout de conexión (60 segundos)
+      timeout: 60000
+      # Configuración del pool de conexiones
+      lettuce:
+        pool:
+          max-active: 8    # Máximo de conexiones activas
+          max-idle: 8      # Máximo de conexiones inactivas
+          min-idle: 0      # Mínimo de conexiones inactivas
+
+  # ========== GRAPHQL ==========
+  graphql:
+    # Accesible en: http://localhost:8080/graphiql
+    graphiql:
+      enabled: true
+
+# ========== SEGURIDAD JWT ==========
+jwt:
+  secret: nezhub-super-secret-key-change-in-production-2024
+  # Tiempo de expiración del token: 24 horas en milisegundos
+  expiration: 86400000
+
+# ========== LOGGING ==========
+logging:
+  level:
+    com.nezhub.app: DEBUG
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.graphql: DEBUG
