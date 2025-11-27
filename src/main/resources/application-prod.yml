@@ -1,0 +1,59 @@
+# ========================================
+# PERFIL DE PRODUCCIÓN (prod)
+# ========================================
+
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+  # ========== CONFIGURACIÓN DEL SERVIDOR ==========
+server:
+  error:
+    include-message: never
+    include-binding-errors: never
+    include-stacktrace: never
+    include-exception: false
+    whitelabel:
+      enabled: false
+
+  # ========== MONGODB ==========
+  data:
+    mongodb:
+
+      uri: ${MONGODB_URI:mongodb://localhost:27017/nezhub}
+      database: nezhub
+      auto-index-creation: true
+
+    # ========== REDIS ==========
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}
+
+      timeout: 10000
+      lettuce:
+        pool:
+          max-active: 16
+          max-idle: 16
+          min-idle: 4
+
+  # ========== GRAPHQL ==========
+  graphql:
+    graphiql:
+      enabled: false
+
+# ========== SEGURIDAD JWT ==========
+# Configuración personalizada para JSON Web Tokens
+jwt:
+  secret: ${JWT_SECRET}
+  expiration: 3600000
+
+# ========== LOGGING ==========
+logging:
+  level:
+    com.nezhub.app: INFO
+    org.springframework.data.mongodb.core.MongoTemplate: WARN
+    org.springframework.security: WARN
+    org.springframework.graphql: WARN
+    root: INFO
