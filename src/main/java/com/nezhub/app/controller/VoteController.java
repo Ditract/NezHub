@@ -1,4 +1,4 @@
-package com.nezhub.app.presentation.graphql;
+package com.nezhub.app.controller;
 
 import com.nezhub.app.application.service.UserService;
 import com.nezhub.app.application.service.VoteService;

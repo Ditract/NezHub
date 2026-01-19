@@ -1,4 +1,4 @@
-package com.nezhub.app.presentation.graphql;
+package com.nezhub.app.controller;
 
 import com.nezhub.app.application.dto.request.LoginRequest;
 import com.nezhub.app.application.dto.request.RegisterRequest;

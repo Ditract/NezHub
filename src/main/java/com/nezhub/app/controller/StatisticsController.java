@@ -1,4 +1,4 @@
-package com.nezhub.app.presentation.graphql;
+package com.nezhub.app.controller;
 
 import com.nezhub.app.application.service.ProjectStatisticsService;
 import org.springframework.graphql.data.method.annotation.Argument;
