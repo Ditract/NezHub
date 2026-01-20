@@ -1,4 +1,4 @@
-package com.nezhub.app.infrastructure.security;
+package com.nezhub.app.security.jwt;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

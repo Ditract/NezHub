@@ -7,7 +7,7 @@ import com.nezhub.app.service.UserService;
 import com.nezhub.app.domain.enums.ProjectStatus;
 import com.nezhub.app.domain.model.Project;
 import com.nezhub.app.domain.model.User;
-import com.nezhub.app.infrastructure.security.AuthenticationUtils;
+import com.nezhub.app.security.AuthenticationUtils;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.security.access.prepost.PreAuthorize;

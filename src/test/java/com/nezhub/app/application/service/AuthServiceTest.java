@@ -7,7 +7,7 @@ import com.nezhub.app.exception.InvalidCredentialsException;
 import com.nezhub.app.exception.UserAlreadyExistsException;
 import com.nezhub.app.domain.enums.UserRole;
 import com.nezhub.app.domain.model.User;
-import com.nezhub.app.infrastructure.security.JwtUtil;
+import com.nezhub.app.security.jwt.JwtUtil;
 import com.nezhub.app.service.AuthService;
 import com.nezhub.app.service.UserService;
 import org.junit.jupiter.api.BeforeEach;

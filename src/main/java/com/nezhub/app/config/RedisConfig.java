@@ -1,4 +1,4 @@
-package com.nezhub.app.infrastructure.config;
+package com.nezhub.app.config;
 
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;

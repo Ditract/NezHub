@@ -1,4 +1,4 @@
-package com.nezhub.app.infrastructure.security;
+package com.nezhub.app.security;
 
 import com.nezhub.app.domain.model.User;
 import com.nezhub.app.domain.repository.UserRepository;

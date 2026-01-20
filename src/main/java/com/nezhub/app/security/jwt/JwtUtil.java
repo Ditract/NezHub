@@ -1,4 +1,4 @@
-package com.nezhub.app.infrastructure.security;
+package com.nezhub.app.security.jwt;
 
 import com.nezhub.app.domain.enums.UserRole;
 import io.jsonwebtoken.Claims;
