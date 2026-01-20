@@ -1,15 +1,17 @@
 package com.nezhub.app.application.service;
 
-import com.nezhub.app.application.exception.CollaborationAlreadyExistsException;
-import com.nezhub.app.application.exception.InvalidProjectDataException;
-import com.nezhub.app.application.exception.ProjectNotFoundException;
-import com.nezhub.app.application.exception.UnauthorizedOperationException;
+import com.nezhub.app.exception.CollaborationAlreadyExistsException;
+import com.nezhub.app.exception.InvalidProjectDataException;
+import com.nezhub.app.exception.ProjectNotFoundException;
+import com.nezhub.app.exception.UnauthorizedOperationException;
 import com.nezhub.app.domain.enums.CollaborationStatus;
 import com.nezhub.app.domain.enums.ProjectStatus;
 import com.nezhub.app.domain.model.Collaboration;
 import com.nezhub.app.domain.model.Project;
 import com.nezhub.app.domain.repository.CollaborationRepository;
 import com.nezhub.app.domain.repository.ProjectRepository;
+import com.nezhub.app.exception.ProjectNotOpenException;
+import com.nezhub.app.service.CollaborationService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -144,7 +146,7 @@ class CollaborationServiceTest {
         when(projectRepository.findById(anyString())).thenReturn(Optional.of(closedProject));
 
         // Act & Assert
-        assertThrows(com.nezhub.app.application.exception.ProjectNotOpenException.class,
+        assertThrows(ProjectNotOpenException.class,
                 () -> collaborationService.joinProject("proj999", userId));
 
         verify(collaborationRepository, never()).save(any(Collaboration.class));

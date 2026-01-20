@@ -1,7 +1,7 @@
 package com.nezhub.app.controller;
 
-import com.nezhub.app.application.service.UserService;
-import com.nezhub.app.application.service.VoteService;
+import com.nezhub.app.service.UserService;
+import com.nezhub.app.service.VoteService;
 import com.nezhub.app.domain.model.Project;
 import com.nezhub.app.domain.model.User;
 import com.nezhub.app.infrastructure.security.AuthenticationUtils;

@@ -1,4 +1,4 @@
-package com.nezhub.app.application.exception;
+package com.nezhub.app.exception;
 
 
 public class UserAlreadyExistsException extends RuntimeException {

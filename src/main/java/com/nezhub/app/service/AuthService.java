@@ -1,10 +1,10 @@
-package com.nezhub.app.application.service;
+package com.nezhub.app.service;
 
 import com.nezhub.app.application.dto.request.LoginRequest;
 import com.nezhub.app.application.dto.request.RegisterRequest;
 import com.nezhub.app.application.dto.response.AuthResponse;
-import com.nezhub.app.application.exception.InvalidCredentialsException;
-import com.nezhub.app.application.exception.UserAlreadyExistsException;
+import com.nezhub.app.exception.InvalidCredentialsException;
+import com.nezhub.app.exception.UserAlreadyExistsException;
 import com.nezhub.app.domain.model.User;
 import com.nezhub.app.infrastructure.security.JwtUtil;
 import org.springframework.security.crypto.password.PasswordEncoder;

@@ -1,4 +1,4 @@
-package com.nezhub.app.application.exception;
+package com.nezhub.app.exception;
 
 public class UnauthorizedOperationException extends RuntimeException {
     public UnauthorizedOperationException(String message) {

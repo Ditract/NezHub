@@ -1,6 +1,6 @@
 package com.nezhub.app.controller;
 
-import com.nezhub.app.application.service.ProjectStatisticsService;
+import com.nezhub.app.service.ProjectStatisticsService;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;

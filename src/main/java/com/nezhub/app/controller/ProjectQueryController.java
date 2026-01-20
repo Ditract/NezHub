@@ -1,7 +1,7 @@
 package com.nezhub.app.controller;
 
-import com.nezhub.app.application.service.ProjectService;
-import com.nezhub.app.application.service.UserService;
+import com.nezhub.app.service.ProjectService;
+import com.nezhub.app.service.UserService;
 import com.nezhub.app.domain.model.Project;
 import com.nezhub.app.domain.model.User;
 import org.springframework.graphql.data.method.annotation.Argument;

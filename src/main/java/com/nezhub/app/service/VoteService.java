@@ -1,7 +1,7 @@
-package com.nezhub.app.application.service;
+package com.nezhub.app.service;
 
-import com.nezhub.app.application.exception.InvalidProjectDataException;
-import com.nezhub.app.application.exception.ProjectNotFoundException;
+import com.nezhub.app.exception.InvalidProjectDataException;
+import com.nezhub.app.exception.ProjectNotFoundException;
 import com.nezhub.app.domain.enums.ProjectStatus;
 import com.nezhub.app.domain.model.Project;
 import com.nezhub.app.domain.model.Vote;

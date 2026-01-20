@@ -1,12 +1,12 @@
-package com.nezhub.app.application.service;
+package com.nezhub.app.service;
 
-import com.nezhub.app.application.exception.*;
 import com.nezhub.app.domain.enums.CollaborationStatus;
 import com.nezhub.app.domain.enums.ProjectStatus;
 import com.nezhub.app.domain.model.Collaboration;
 import com.nezhub.app.domain.model.Project;
 import com.nezhub.app.domain.repository.CollaborationRepository;
 import com.nezhub.app.domain.repository.ProjectRepository;
+import com.nezhub.app.exception.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDateTime;

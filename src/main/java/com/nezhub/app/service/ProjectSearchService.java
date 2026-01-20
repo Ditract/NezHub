@@ -1,4 +1,4 @@
-package com.nezhub.app.application.service;
+package com.nezhub.app.service;
 
 import com.nezhub.app.domain.enums.ProjectStatus;
 import com.nezhub.app.domain.model.Project;

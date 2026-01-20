@@ -1,7 +1,7 @@
 package com.nezhub.app.controller;
 
-import com.nezhub.app.application.service.CollaborationService;
-import com.nezhub.app.application.service.UserService;
+import com.nezhub.app.service.CollaborationService;
+import com.nezhub.app.service.UserService;
 import com.nezhub.app.domain.enums.CollaborationStatus;
 import com.nezhub.app.domain.model.Collaboration;
 import com.nezhub.app.domain.model.User;

@@ -1,6 +1,6 @@
-package com.nezhub.app.application.service;
+package com.nezhub.app.service;
 
-import com.nezhub.app.application.exception.UserNotFoundException;
+import com.nezhub.app.exception.UserNotFoundException;
 import com.nezhub.app.domain.model.User;
 import com.nezhub.app.domain.repository.UserRepository;
 import org.springframework.stereotype.Service;
