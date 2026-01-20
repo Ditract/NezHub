@@ -1,7 +1,7 @@
 package com.nezhub.app.service;
 
-import com.nezhub.app.domain.enums.ProjectStatus;
-import com.nezhub.app.domain.model.Project;
+import com.nezhub.app.enums.ProjectStatus;
+import com.nezhub.app.model.Project;
 import com.nezhub.app.domain.repository.ProjectRepository;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;

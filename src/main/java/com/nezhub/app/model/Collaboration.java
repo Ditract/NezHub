@@ -1,6 +1,6 @@
-package com.nezhub.app.domain.model;
+package com.nezhub.app.model;
 
-import com.nezhub.app.domain.enums.CollaborationStatus;
+import com.nezhub.app.enums.CollaborationStatus;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
 import org.springframework.data.mongodb.core.mapping.Document;

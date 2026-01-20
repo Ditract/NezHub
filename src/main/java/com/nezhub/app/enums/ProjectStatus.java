@@ -1,4 +1,4 @@
-package com.nezhub.app.domain.enums;
+package com.nezhub.app.enums;
 
 
 public enum ProjectStatus {

@@ -1,6 +1,6 @@
 package com.nezhub.app.domain.repository;
 
-import com.nezhub.app.domain.model.Vote;
+import com.nezhub.app.model.Vote;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

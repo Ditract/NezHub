@@ -1,6 +1,6 @@
 package com.nezhub.app.service;
 
-import com.nezhub.app.domain.enums.ProjectStatus;
+import com.nezhub.app.enums.ProjectStatus;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.Aggregation;

@@ -4,7 +4,7 @@ import com.nezhub.app.dto.auth.LoginRequest;
 import com.nezhub.app.dto.auth.RegisterRequest;
 import com.nezhub.app.dto.auth.AuthResponse;
 import com.nezhub.app.service.AuthService;
-import com.nezhub.app.domain.enums.UserRole;
+import com.nezhub.app.enums.UserRole;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.stereotype.Controller;

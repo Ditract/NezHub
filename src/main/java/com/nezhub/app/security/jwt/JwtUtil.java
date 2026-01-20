@@ -1,6 +1,6 @@
 package com.nezhub.app.security.jwt;
 
-import com.nezhub.app.domain.enums.UserRole;
+import com.nezhub.app.enums.UserRole;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

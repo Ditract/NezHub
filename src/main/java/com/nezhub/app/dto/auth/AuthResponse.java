@@ -1,6 +1,6 @@
 package com.nezhub.app.dto.auth;
 
-import com.nezhub.app.domain.enums.UserRole;
+import com.nezhub.app.enums.UserRole;
 
 public class AuthResponse {
 

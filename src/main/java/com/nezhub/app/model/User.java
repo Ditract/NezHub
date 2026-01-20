@@ -1,6 +1,6 @@
-package com.nezhub.app.domain.model;
+package com.nezhub.app.model;
 
-import com.nezhub.app.domain.enums.UserRole;
+import com.nezhub.app.enums.UserRole;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;

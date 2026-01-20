@@ -5,7 +5,7 @@ import com.nezhub.app.dto.auth.RegisterRequest;
 import com.nezhub.app.dto.auth.AuthResponse;
 import com.nezhub.app.exception.InvalidCredentialsException;
 import com.nezhub.app.exception.UserAlreadyExistsException;
-import com.nezhub.app.domain.model.User;
+import com.nezhub.app.model.User;
 import com.nezhub.app.security.jwt.JwtUtil;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

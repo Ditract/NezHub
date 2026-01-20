@@ -1,6 +1,6 @@
 package com.nezhub.app.dto.collaboration;
 
-import com.nezhub.app.domain.enums.CollaborationStatus;
+import com.nezhub.app.enums.CollaborationStatus;
 import java.time.LocalDateTime;
 
 

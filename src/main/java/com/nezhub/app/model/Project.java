@@ -1,7 +1,7 @@
-package com.nezhub.app.domain.model;
+package com.nezhub.app.model;
 
 
-import com.nezhub.app.domain.enums.ProjectStatus;
+import com.nezhub.app.enums.ProjectStatus;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;

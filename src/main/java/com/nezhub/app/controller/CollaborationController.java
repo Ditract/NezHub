@@ -2,9 +2,9 @@ package com.nezhub.app.controller;
 
 import com.nezhub.app.service.CollaborationService;
 import com.nezhub.app.service.UserService;
-import com.nezhub.app.domain.enums.CollaborationStatus;
-import com.nezhub.app.domain.model.Collaboration;
-import com.nezhub.app.domain.model.User;
+import com.nezhub.app.enums.CollaborationStatus;
+import com.nezhub.app.model.Collaboration;
+import com.nezhub.app.model.User;
 import com.nezhub.app.security.AuthenticationUtils;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;

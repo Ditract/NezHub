@@ -2,8 +2,8 @@ package com.nezhub.app.controller;
 
 import com.nezhub.app.service.ProjectService;
 import com.nezhub.app.service.UserService;
-import com.nezhub.app.domain.model.Project;
-import com.nezhub.app.domain.model.User;
+import com.nezhub.app.model.Project;
+import com.nezhub.app.model.User;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.graphql.data.method.annotation.SchemaMapping;

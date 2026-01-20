@@ -1,9 +1,9 @@
 package com.nezhub.app.service;
 
-import com.nezhub.app.domain.enums.CollaborationStatus;
-import com.nezhub.app.domain.enums.ProjectStatus;
-import com.nezhub.app.domain.model.Collaboration;
-import com.nezhub.app.domain.model.Project;
+import com.nezhub.app.enums.CollaborationStatus;
+import com.nezhub.app.enums.ProjectStatus;
+import com.nezhub.app.model.Collaboration;
+import com.nezhub.app.model.Project;
 import com.nezhub.app.domain.repository.CollaborationRepository;
 import com.nezhub.app.domain.repository.ProjectRepository;
 import com.nezhub.app.exception.*;

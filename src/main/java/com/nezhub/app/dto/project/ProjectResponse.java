@@ -1,6 +1,6 @@
 package com.nezhub.app.dto.project;
 
-import com.nezhub.app.domain.enums.ProjectStatus;
+import com.nezhub.app.enums.ProjectStatus;
 
 
 import java.time.LocalDateTime;

@@ -1,7 +1,7 @@
 package com.nezhub.app.domain.repository;
 
-import com.nezhub.app.domain.enums.ProjectStatus;
-import com.nezhub.app.domain.model.Project;
+import com.nezhub.app.enums.ProjectStatus;
+import com.nezhub.app.model.Project;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.repository.MongoRepository;

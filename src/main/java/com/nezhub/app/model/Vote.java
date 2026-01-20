@@ -1,4 +1,4 @@
-package com.nezhub.app.domain.model;
+package com.nezhub.app.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;

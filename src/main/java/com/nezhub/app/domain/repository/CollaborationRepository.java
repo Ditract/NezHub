@@ -1,7 +1,7 @@
 package com.nezhub.app.domain.repository;
 
-import com.nezhub.app.domain.enums.CollaborationStatus;
-import com.nezhub.app.domain.model.Collaboration;
+import com.nezhub.app.enums.CollaborationStatus;
+import com.nezhub.app.model.Collaboration;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,8 +1,8 @@
 package com.nezhub.app.controller;
 
 import com.nezhub.app.service.ProjectSearchService;
-import com.nezhub.app.domain.enums.ProjectStatus;
-import com.nezhub.app.domain.model.Project;
+import com.nezhub.app.enums.ProjectStatus;
+import com.nezhub.app.model.Project;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
