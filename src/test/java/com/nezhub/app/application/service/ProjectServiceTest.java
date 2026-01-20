@@ -6,7 +6,7 @@ import com.nezhub.app.exception.ProjectNotFoundException;
 import com.nezhub.app.exception.UnauthorizedOperationException;
 import com.nezhub.app.enums.ProjectStatus;
 import com.nezhub.app.model.Project;
-import com.nezhub.app.domain.repository.ProjectRepository;
+import com.nezhub.app.repository.ProjectRepository;
 import com.nezhub.app.service.ProjectService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

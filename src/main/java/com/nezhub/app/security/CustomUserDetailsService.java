@@ -1,7 +1,7 @@
 package com.nezhub.app.security;
 
 import com.nezhub.app.model.User;
-import com.nezhub.app.domain.repository.UserRepository;
+import com.nezhub.app.repository.UserRepository;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

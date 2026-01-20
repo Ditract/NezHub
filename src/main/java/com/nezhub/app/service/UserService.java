@@ -2,7 +2,7 @@ package com.nezhub.app.service;
 
 import com.nezhub.app.exception.UserNotFoundException;
 import com.nezhub.app.model.User;
-import com.nezhub.app.domain.repository.UserRepository;
+import com.nezhub.app.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;

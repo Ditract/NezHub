@@ -1,4 +1,4 @@
-package com.nezhub.app.domain.repository;
+package com.nezhub.app.repository;
 
 import com.nezhub.app.enums.ProjectStatus;
 import com.nezhub.app.model.Project;

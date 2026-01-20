@@ -1,4 +1,4 @@
-package com.nezhub.app.domain.repository;
+package com.nezhub.app.repository;
 
 import com.nezhub.app.model.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
