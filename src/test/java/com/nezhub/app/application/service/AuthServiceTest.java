@@ -1,8 +1,8 @@
 package com.nezhub.app.application.service;
 
-import com.nezhub.app.application.dto.request.LoginRequest;
-import com.nezhub.app.application.dto.request.RegisterRequest;
-import com.nezhub.app.application.dto.response.AuthResponse;
+import com.nezhub.app.dto.auth.LoginRequest;
+import com.nezhub.app.dto.auth.RegisterRequest;
+import com.nezhub.app.dto.auth.AuthResponse;
 import com.nezhub.app.exception.InvalidCredentialsException;
 import com.nezhub.app.exception.UserAlreadyExistsException;
 import com.nezhub.app.domain.enums.UserRole;

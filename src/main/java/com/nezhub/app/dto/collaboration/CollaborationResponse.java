@@ -1,4 +1,4 @@
-package com.nezhub.app.application.dto.response;
+package com.nezhub.app.dto.collaboration;
 
 import com.nezhub.app.domain.enums.CollaborationStatus;
 import java.time.LocalDateTime;

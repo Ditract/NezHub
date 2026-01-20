@@ -1,7 +1,7 @@
 package com.nezhub.app.controller;
 
-import com.nezhub.app.application.dto.request.CreateProjectRequest;
-import com.nezhub.app.application.dto.request.UpdateProjectRequest;
+import com.nezhub.app.dto.project.CreateProjectRequest;
+import com.nezhub.app.dto.project.UpdateProjectRequest;
 import com.nezhub.app.service.ProjectService;
 import com.nezhub.app.service.UserService;
 import com.nezhub.app.domain.enums.ProjectStatus;

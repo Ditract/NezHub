@@ -1,4 +1,4 @@
-package com.nezhub.app.application.dto.request;
+package com.nezhub.app.dto.project;
 
 import com.nezhub.app.domain.enums.ProjectStatus;
 import jakarta.validation.constraints.Size;

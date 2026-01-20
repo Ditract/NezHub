@@ -1,7 +1,7 @@
 package com.nezhub.app.application.service;
 
-import com.nezhub.app.application.dto.request.CreateProjectRequest;
-import com.nezhub.app.application.dto.request.UpdateProjectRequest;
+import com.nezhub.app.dto.project.CreateProjectRequest;
+import com.nezhub.app.dto.project.UpdateProjectRequest;
 import com.nezhub.app.exception.ProjectNotFoundException;
 import com.nezhub.app.exception.UnauthorizedOperationException;
 import com.nezhub.app.domain.enums.ProjectStatus;

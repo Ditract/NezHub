@@ -1,8 +1,8 @@
 package com.nezhub.app.controller;
 
-import com.nezhub.app.application.dto.request.LoginRequest;
-import com.nezhub.app.application.dto.request.RegisterRequest;
-import com.nezhub.app.application.dto.response.AuthResponse;
+import com.nezhub.app.dto.auth.LoginRequest;
+import com.nezhub.app.dto.auth.RegisterRequest;
+import com.nezhub.app.dto.auth.AuthResponse;
 import com.nezhub.app.service.AuthService;
 import com.nezhub.app.domain.enums.UserRole;
 import org.springframework.graphql.data.method.annotation.Argument;

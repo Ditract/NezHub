@@ -1,4 +1,4 @@
-package com.nezhub.app.application.dto.request;
+package com.nezhub.app.dto.auth;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

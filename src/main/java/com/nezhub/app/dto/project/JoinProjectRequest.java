@@ -1,4 +1,4 @@
-package com.nezhub.app.application.dto.request;
+package com.nezhub.app.dto.project;
 
 import jakarta.validation.constraints.NotBlank;
 

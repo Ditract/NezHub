@@ -1,4 +1,4 @@
-package com.nezhub.app.application.dto.request;
+package com.nezhub.app.dto.auth;
 
 import com.nezhub.app.domain.enums.UserRole;
 import jakarta.validation.constraints.Email;
