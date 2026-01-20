@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 @SpringBootApplication
 @EnableCaching
-@EnableMongoRepositories(basePackages = "com.nezhub.app.domain.repository")
+@EnableMongoRepositories(basePackages = "com.nezhub.app.repository")
 public class NezHubApplication {
 
 	public static void main(String[] args) {

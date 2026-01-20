@@ -1,13 +1,15 @@
 package com.nezhub.app.application.service;
 
-import com.nezhub.app.application.dto.request.LoginRequest;
-import com.nezhub.app.application.dto.request.RegisterRequest;
-import com.nezhub.app.application.dto.response.AuthResponse;
-import com.nezhub.app.application.exception.InvalidCredentialsException;
-import com.nezhub.app.application.exception.UserAlreadyExistsException;
-import com.nezhub.app.domain.enums.UserRole;
-import com.nezhub.app.domain.model.User;
-import com.nezhub.app.infrastructure.security.JwtUtil;
+import com.nezhub.app.dto.auth.LoginRequest;
+import com.nezhub.app.dto.auth.RegisterRequest;
+import com.nezhub.app.dto.auth.AuthResponse;
+import com.nezhub.app.exception.InvalidCredentialsException;
+import com.nezhub.app.exception.UserAlreadyExistsException;
+import com.nezhub.app.enums.UserRole;
+import com.nezhub.app.model.User;
+import com.nezhub.app.security.jwt.JwtUtil;
+import com.nezhub.app.service.AuthService;
+import com.nezhub.app.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
